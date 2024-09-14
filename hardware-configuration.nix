@@ -9,10 +9,11 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "i915" "coretemp" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/43619a65-3480-4055-bc43-c6e18a09ccb4";
       fsType = "ext4";
